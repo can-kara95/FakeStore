@@ -1,5 +1,5 @@
-'use client';
-import { Link } from 'react-router-dom';
+'use client'
+import  Link  from 'next/link';
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 
@@ -12,6 +12,12 @@ export default function ProdList() {
       .then(data => setProducts(data));
   }, []);
 
+  // if (product.description.substring(0, 135) ){
+
+  // }
+
+  //truncate
+
   return (
     <main className={styles.main}>
       <div>
@@ -20,13 +26,13 @@ export default function ProdList() {
           <ul className={styles.gridContainer}>
             {products.map((product, index) => (
               <li className={`${styles.gridItem} ${styles.card}`} key={index}>
-                <Link to={`./products/${product.id}`} className={styles.link}>
+                <Link href={`/products/${product.id}`}>
                   <div className={styles.prod}>
                     <h5 className={styles.headline}>{product.title}</h5>
                     <img className={styles.image} src={product.image} alt={product.title} />
-                    <p className={styles.prodDesc}>{product.description}</p>
+                    <p className={styles.prodDesc}>{product.description.substring(0, 135).concat("...")}</p>
                   </div>
-                </Link>
+                  </Link>
               </li>
             ))}
           </ul>
