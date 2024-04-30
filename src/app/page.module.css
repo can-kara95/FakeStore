@@ -1,0 +1,50 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.products {
+
+}
+
+.headline {
+  text-align: center;
+  color: black;
+}
+
+.prodList {
+  display: flex;
+}
+
+.image {
+  width: 100px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; 
+  padding: 20px; 
+  text-align: center; 
+}
+
+.prodDesc {
+  color: black;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-auto-rows: auto; 
+  grid-gap: 20px;
+}
+
+
+.gridItem {
+  list-style-type: none;
+}
